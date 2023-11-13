@@ -6,6 +6,7 @@ Bem-vindo ao projeto de geração de tabela de empresas da Bolsa de Valores! Est
 Antes de começar, certifique-se de ter o seguinte instalado em seu sistema:
 
 - [Python](https://www.python.org/downloads/): Certifique-se de ter o Python instalado em seu sistema. Você pode baixar a versão mais recente [aqui](https://www.python.org/downloads/).
+- [Poetry](https://python-poetry.org/docs/): Certifique-se de ter o Poetry instalado em seu sistema. Você pode instalar usando as instruções na [documentação oficial](https://python-poetry.org/docs/#installation).
 
 ## Instalação
 
@@ -19,26 +20,10 @@ Antes de começar, certifique-se de ter o seguinte instalado em seu sistema:
 2. **Navegue até o Diretório do Projeto:**
     - Abra o terminal (ou prompt de comando) e navegue até o diretório onde você colocou o projeto.
 
-3. **Crie um Ambiente Virtual (Opcional, mas recomendado):**
-    - Execute o seguinte comando para criar um ambiente virtual (ambiente isolado para o projeto):
+3. **Instale as Dependências usando Poetry:**
+    - Execute o seguinte comando para instalar as dependências do projeto com Poetry:
       ```
-      python -m venv venv
-      ```
-
-4. **Ative o Ambiente Virtual:**
-    - No Windows, use o comando:
-      ```
-      venv\Scripts\activate
-      ```
-    - No Linux/Mac, use o comando:
-      ```
-      source venv/bin/activate
-      ```
-
-5. **Instale as Dependências:**
-    - Execute o comando para instalar as dependências do projeto:
-      ```
-      pip install -r requirements.txt
+      poetry install
       ```
 
 ## Uso
@@ -46,7 +31,7 @@ Antes de começar, certifique-se de ter o seguinte instalado em seu sistema:
 1. **Execute o Projeto:**
     - No terminal, execute o seguinte comando:
       ```
-      python main.py
+      python3 src/main.py
       ```
 
 2. **Siga as Instruções:**
@@ -54,12 +39,6 @@ Antes de começar, certifique-se de ter o seguinte instalado em seu sistema:
 
 3. **Visualize a Tabela:**
     - Após a execução, o programa gerará uma tabela com as informações filtradas das empresas da bolsa de valores.
-
-4. **Saia do Ambiente Virtual (Opcional):**
-    - Quando terminar, você pode sair do ambiente virtual usando o comando:
-      ```
-      deactivate
-      ```
 
 ## Contribuições
 Se você encontrar problemas ou tiver sugestões para melhorar o projeto, sinta-se à vontade para abrir uma [issue](https://github.com/seu-usuario/nome-do-projeto/issues) ou enviar um [pull request](https://github.com/seu-usuario/nome-do-projeto/pulls).
