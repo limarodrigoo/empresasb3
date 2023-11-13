@@ -34,8 +34,15 @@ Antes de começar, certifique-se de ter o seguinte instalado em seu sistema:
       python3 src/main.py
       ```
 
-2. **Siga as Instruções:**
-    - O programa irá guiá-lo através das opções disponíveis. Você poderá inserir filtros para a tabela de empresas, como setor, país, etc.
+2. **Filtros:**
+    -  "P/L": ("<", 15)
+    -  "ROE": (">=", 0.15)
+    -  "Dív.Brut/ Patrim.": ("<=", 1)
+    - "Cresc. Rec.5a": (">=", 0.1)
+    - "Liq.2meses": (">=", 2000000)
+    - "Patrim. Líq": (">", 0)
+    - "ROIC": (">=", 0.15)
+    - "Mrg. Líq.": (">=", 0.1)
 
 3. **Visualize a Tabela:**
     - Após a execução, o programa gerará uma tabela com as informações filtradas das empresas da bolsa de valores.
