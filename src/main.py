@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+from helper import filtros
 
 url = "https://www.fundamentus.com.br/resultado.php"
 headers = {
@@ -8,18 +9,6 @@ headers = {
 }
 response = requests.get(url, headers=headers)
 soup = BeautifulSoup(response.text, "html.parser")
-
-
-def limpar_e_converter(valor):
-    if "%" in valor:
-        multiplicador = -1 if "-" in valor else 1
-        return (
-            multiplicador * float(valor.strip("%").replace(".", "").replace(",", "."))
-        ) / 100
-    elif "." in valor:
-        return float(valor.replace(".", "").replace(",", "."))
-    else:
-        return float(valor.replace(",", "."))
 
 
 # Encontrar a tabela pelo ID "resultado"
@@ -40,7 +29,7 @@ if table:
         "Div.Yield",
         "Mrg. Líq.",
     ]
-    # Extrair dados da tabela usando pandas
+
     filtro_dict = {
         "P/L": ("<", 15),
         "ROE": (">=", 0.15),
@@ -70,7 +59,7 @@ if table:
 
     for i, coluna in enumerate(colunas_desejadas):
         if i != 0:
-            df[coluna] = df[coluna].apply(limpar_e_converter)
+            df[coluna] = df[coluna].apply(filtros.limpar_e_converter)
     # Salvar DataFrame em um arquivo Excel
 
     for coluna, (operacao, valor) in filtro_dict.items():
